@@ -43,7 +43,11 @@ class TestController extends AbstractController
      */
     public function test3(Request $req)
     {
-        dd($req);
+    
+        $searchValue = $req-> query-> get('search');
+        $methode = $req->getMethod();
+        // dd($searchValue, $methode);
+        return $this-> render('test/test3.html.twig');
     }
 
 }
