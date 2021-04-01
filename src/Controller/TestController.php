@@ -46,8 +46,14 @@ class TestController extends AbstractController
     
         $searchValue = $req-> query-> get('search');
         $methode = $req->getMethod();
+        $student = ['Jerem', 'Umberto', 'Noemie', 'Clementine'];
         // dd($searchValue, $methode);
-        return $this-> render('test/test3.html.twig');
+        return $this-> render('test/test3.html.twig', [
+            'title' => 'test 3',
+            'searchValue' => $searchValue,
+            'method' => $methode,
+            'students' => $student,
+        ]);
     }
 
 }
