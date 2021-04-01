@@ -1,4 +1,8 @@
-<h1> {{title}}</h1>
+{% extends 'base.html.twig' %}
+
+  {% block body %}
+
+  <h1> {{title}}</h1>
 
 <p> Valeur recherchée : {{searchValue}} </p>
 
@@ -6,17 +10,18 @@
 
 {# Commentaire twig #}
 
-
 {% if title == 'Test3' %}
     <p>"C'est le bon titre"</p>
 {% else %}
     <p>"Ce n'est pas le bon titre"</p>
 {% endif %}
 
-
 <h2>{{ students|length}} étudiants </h2>
-<ul>
-{% for student in students %}
-    <li>{{student}}</li>
-{% endfor %}
-</ul>
+    <ul>
+        {% for student in students %}
+            <li>{{student|upper}}</li>
+        {% endfor %}
+    </ul>
+
+  {% endblock %}
+
